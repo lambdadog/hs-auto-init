@@ -1,0 +1,30 @@
+cabal-version:      3.0
+name:               auto-init
+version:            0.1.0.0
+synopsis:
+    Small library to automatically handle RTS initialization for shared libraries
+
+-- description:
+homepage:           https://github.com/lambdadog/hs-auto-init
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Ashlynn Anderson
+maintainer:         contact@pea.sh
+-- copyright:
+category:           Distribution
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+extra-source-files: cbits/auto_init.c
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  AutoInit
+    -- other-modules:
+    -- other-extensions:
+    -- build-depends:    base ^>=4.17.2.1
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    c-sources:        cbits/auto_init.c
